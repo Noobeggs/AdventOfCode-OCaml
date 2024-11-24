@@ -16,7 +16,7 @@ depends: [
   "cohttp-lwt"
   "re"
   "angstrom"
-  "ppx-deriving"
+  "ppx_deriving"
   "ocamlformat" {dev}
   "lsp" {dev}
   "odoc" {with-doc}
