@@ -1,5 +1,5 @@
 (executable
- (name day02)
+ (name day03)
  (libraries angstrom)
  (preprocess
   (pps ppx_deriving.show)))
