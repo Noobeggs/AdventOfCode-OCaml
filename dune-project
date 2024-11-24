@@ -19,7 +19,7 @@
  (name aoc)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune cohttp cohttp-lwt re angstrom)
+ (depends ocaml dune cohttp cohttp-lwt re angstrom ppx-deriving (ocamlformat :dev) (lsp :dev))
  (tags
   (topics "to describe" your project)))
 

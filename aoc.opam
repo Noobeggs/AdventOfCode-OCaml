@@ -2,13 +2,13 @@
 opam-version: "2.0"
 synopsis: "A short synopsis"
 description: "A longer description"
-maintainer: ["Maintainer Name"]
-authors: ["Author Name"]
+maintainer: ["Noobeggs"]
+authors: ["Noobeggs"]
 license: "LICENSE"
 tags: ["topics" "to describe" "your" "project"]
-homepage: "https://github.com/username/reponame"
+homepage: "https://github.com/Noobeggs/AdventOfCode-OCaml"
 doc: "https://url/to/documentation"
-bug-reports: "https://github.com/username/reponame/issues"
+bug-reports: "https://github.com/Noobeggs/AdventOfCode-OCaml/issues"
 depends: [
   "ocaml"
   "dune" {>= "3.16"}
@@ -16,6 +16,9 @@ depends: [
   "cohttp-lwt"
   "re"
   "angstrom"
+  "ppx-deriving"
+  "ocamlformat" {dev}
+  "lsp" {dev}
   "odoc" {with-doc}
 ]
 build: [
@@ -32,4 +35,4 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/username/reponame.git"
+dev-repo: "git+https://github.com/Noobeggs/AdventOfCode-OCaml.git"
