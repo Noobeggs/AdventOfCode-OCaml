@@ -68,37 +68,36 @@ let () =
         in
         card_no, count)
       cards
-      in
-  let copies = List.fold_left
-    (fun map (card_no, count) ->
-      let map =
-        Int_map.update
-          card_no
-          (function Some num -> Some (num + 1) | None -> Some 1)
-          map
-      in
-      let won_card_ids = List.init count (fun i -> i + 1 + card_no) in
-      List.fold_left
-        (fun map id ->
-          let x =
-            match Int_map.find_opt card_no map with
+  in
+  let copies =
+    List.fold_left
+      (fun map (card_no, count) ->
+        let map =
+          Int_map.update
+            card_no
+            (function
+              | Some num -> Some (num + 1)
+              | None -> Some 1)
+            map
+        in
+        let won_card_ids = List.init count (fun i -> i + 1 + card_no) in
+        List.fold_left
+          (fun map id ->
+            let x =
+              match Int_map.find_opt card_no map with
               | Some x -> x
               | None -> 0
-          in
-          Int_map.update
-            id
-            (function Some num -> Some (num + x) | None -> Some x)
-            map)
-        map
-        won_card_ids)
-    Int_map.empty
-    winners
+            in
+            Int_map.update
+              id
+              (function
+                | Some num -> Some (num + x)
+                | None -> Some x)
+              map)
+          map
+          won_card_ids)
+      Int_map.empty
+      winners
   in
-  Int_map.fold
-    (fun _ copies sum ->
-      sum + copies )
-    copies
-    0
-  |> print_int
-  |> print_newline
+  Int_map.fold (fun _ copies sum -> sum + copies) copies 0 |> print_int |> print_newline
 ;;
