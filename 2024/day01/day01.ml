@@ -51,8 +51,8 @@ let () =
   in
   List.fold_left
     (fun acc num ->
-      print_int acc |> print_newline;
-      print_int num |> print_newline;
+      (* print_int acc |> print_newline; *)
+      (* print_int num |> print_newline; *)
       match Int_map.find_opt num int_map with
       | Some x -> acc + (x * num)
       | None -> acc)
