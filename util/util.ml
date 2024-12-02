@@ -28,3 +28,13 @@ module CSet = struct
       (to_seq set)
   ;;
 end
+
+module P = struct
+  let is_digit = function
+    | '0' .. '9' -> true
+    | _ -> false
+  ;;
+end
+
+let get_input file = In_channel.input_all (In_channel.open_text file)
+let get_input_lines file = In_channel.input_lines (In_channel.open_text file)

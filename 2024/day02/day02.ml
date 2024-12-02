@@ -34,8 +34,8 @@ let () =
 let is_safe2 report =
   let rec aux acc lst prefix =
     match lst with
-      | x :: tl -> aux (List.rev_append prefix tl :: acc) tl (x :: prefix)
-      | [] -> acc
+    | x :: tl -> aux (List.rev_append prefix tl :: acc) tl (x :: prefix)
+    | [] -> acc
   in
   let sublists = aux [] report [] in
   is_safe report || List.fold_left (fun acc lst -> acc || is_safe lst) false sublists
@@ -43,11 +43,11 @@ let is_safe2 report =
 
 (*   let example = *)
 (*   "7 6 4 2 1 *)
-(* 1 2 7 8 9 *)
-(* 9 7 6 2 1 *)
-(* 1 3 2 4 5 *)
-(* 8 6 4 4 1 *)
-(* 1 3 6 7 9" *)
+     (* 1 2 7 8 9 *)
+     (* 9 7 6 2 1 *)
+     (* 1 3 2 4 5 *)
+     (* 8 6 4 4 1 *)
+     (* 1 3 6 7 9" *)
 
 let () =
   let input = In_channel.input_all (In_channel.open_text "2024/day02/input") in
