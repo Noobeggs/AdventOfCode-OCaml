@@ -37,7 +37,7 @@ let find word grid =
     0
 ;;
 
-let () =
+let part_one =
   let input = Util.get_input_lines "2024/day04/input" in
   (* let input = String.split_on_char '\n' example in *)
   let char_map = Util.CMap.empty in
@@ -60,8 +60,9 @@ let () =
     print_string "Rows: ";
     print_int rows |> print_newline
   in
-  find "XMAS" char_map |> print_int |> print_newline |> print_newline
-;;
+  find "XMAS" char_map
+in
+part_one |> print_int |> print_newline |> print_newline
 
 (* Horrendous, absolutely horrendous. *)
 let find_xword word grid =
@@ -123,7 +124,7 @@ let find_xword word grid =
     0
 ;;
 
-let () =
+let part_two =
   let input = Util.get_input_lines "2024/day04/input" in
   (* let input = String.split_on_char '\n' example in *)
   let char_map = Util.CMap.empty in
@@ -141,5 +142,6 @@ let () =
       (0, char_map)
       input
   in
-  find_xword "MAS" char_map |> print_int |> print_newline
-;;
+  find_xword "MAS" char_map
+in
+part_two |> print_int |> print_newline

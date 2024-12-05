@@ -23,13 +23,12 @@ let is_safe report =
   is_increasing report || is_decreasing report
 ;;
 
-let () =
+let part_one =
   let input = In_channel.input_all (In_channel.open_text "2024/day02/input") in
   let reports = parse input in
   List.fold_left (fun acc report -> if is_safe report then acc + 1 else acc) 0 reports
-  |> print_int
-  |> print_newline
-;;
+in
+part_one |> print_int |> print_newline
 
 let is_safe2 report =
   let rec aux acc lst prefix =
@@ -49,11 +48,10 @@ let is_safe2 report =
      (* 8 6 4 4 1 *)
      (* 1 3 6 7 9" *)
 
-let () =
+let part_two =
   let input = In_channel.input_all (In_channel.open_text "2024/day02/input") in
   let reports = parse input in
   (* let reports = parse example in *)
   List.fold_left (fun acc report -> if is_safe2 report then acc + 1 else acc) 0 reports
-  |> print_int
-  |> print_newline
-;;
+in
+part_two |> print_int |> print_newline

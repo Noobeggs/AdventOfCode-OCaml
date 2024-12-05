@@ -24,7 +24,7 @@ let rec is_correct edges update =
   | hd :: tl -> if check hd tl then is_correct edges tl else false
 ;;
 
-let () =
+let part_one =
   let input = Util.get_input "2024/day05/input" in
   let edges, updates = parse input in
   let correct_updates = List.filter (fun update -> is_correct edges update) updates in
@@ -32,9 +32,8 @@ let () =
     (fun acc update -> acc + List.nth update (List.length update / 2))
     0
     correct_updates
-  |> print_int
-  |> print_newline
-;;
+in
+part_one |> print_int |> print_newline
 
 let topo_sort edges update =
   let rec dfs acc node =
@@ -81,7 +80,7 @@ let topo_sort edges update =
      (*    97,13,75,29,47" *)
 (* ;; *)
 
-let () =
+let part_two =
   let input = Util.get_input "2024/day05/input" in
   (* let input = example in *)
   let edges, updates = parse input in
@@ -98,6 +97,5 @@ let () =
     (fun acc update -> acc + List.nth (topo_sort edges update) (List.length update / 2))
     0
     wrong_updates
-  |> print_int
-  |> print_newline
-;;
+in
+part_two |> print_int |> print_newline
