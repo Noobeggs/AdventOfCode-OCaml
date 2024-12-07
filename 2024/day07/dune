@@ -1,0 +1,6 @@
+(executable
+ (name day07)
+ (public_name day07-2024)
+ (libraries util angstrom)
+ (preprocess
+  (pps ppx_deriving.show)))
