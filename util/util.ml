@@ -6,6 +6,9 @@ module Coordinate = struct
   let adj_diag (x, y) = adj (x, y) @ diag (x, y)
   let compare = compare
   let ( + ) (x1, y1) (x2, y2) = x1 + x2, y1 + y2
+  let ( * ) n (x1, y1) = n * x1, n * y1
+  let ( ~- ) (x, y) = -x, -y
+  let ( - ) (x1, y1) (x2, y2) = x1 - x2, y1 - y2
 end
 
 module CMap = struct
